@@ -129,10 +129,10 @@
       foregroundColorPicker.value = localStorage['foreground_color'];
         if(localStorage['wheater_scale'] == 0){
             document.getElementById("tab-1-c").className += " active";
-            document.getElementById("tab-1-f").className += " ";
+            document.getElementById("tab-1-f").className -= " active";
         }else{
             document.getElementById("tab-1-f").className += " active";
-            document.getElementById("tab-1-c").className += " ";
+            document.getElementById("tab-1-c").className -= " active";
         }
    
    }
