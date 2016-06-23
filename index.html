@@ -50,8 +50,8 @@
     <div class="item-container-header">Temperature Scale</div>
     <div class="item-container-content">
         <div class="item tab-buttons" id='scale_select'>
-            <a name="tab-1" class="tab-button active" value='c'>Celcius</a>
-            <a name="tab-1" class="tab-button" value='f'>Fahrenheit</a>
+            <a name="tab-1" class="tab-button active" value='c' id='tab-1-c'>Celcius</a>
+            <a name="tab-1" class="tab-button" value='f' id='tab-1-f'>Fahrenheit</a>
         </div>
     </div>
 </div>
@@ -127,7 +127,12 @@
     if(localStorage['wheater_scale']) {
       backgroundColorPicker.value = localStorage['background_color'];
       foregroundColorPicker.value = localStorage['foreground_color'];
-    //  scaleSelect.value = localStorage['wheater_scale'];
+        if(localStorage['wheater_scale'] == 0){
+            document.getElementById("tab-1-c").className += " active";
+        }else{
+            document.getElementById("tab-1-f").className += " active";
+        }
+   
    }
   })();
   </script>
