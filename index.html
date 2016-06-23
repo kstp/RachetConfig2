@@ -33,11 +33,11 @@
       <div class='item-container-content'>
         <label class='item'>
           Background Color
-          <input id='background_color_picker' type='text' class='item-color item-color-sunny' value='#000000'>
+          <input id='background_color_picker' type='text' class='item-color item-color-sunny' value='#55FF55'>
         </label>
       </div>
       <div class='item-container-footer'>
-        Choose the app's background color. Used if High Contrast Mode is not selected. Note: Only available on Basalt watches that support many colors.
+          Choose the app's background color.
       </div>
     </div>
 
@@ -107,9 +107,6 @@
     if(localStorage['foreground_color']) {
       backgroundColorPicker.value = localStorage['background_color'];
       foregroundColorPicker.value = localStorage['foreground_color'];
-   }else{
-      backgroundColorPicker.value = 0x55FF55;
-      foregroundColorPicker.value = 0x000000;
    }
   })();
   </script>
