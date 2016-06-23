@@ -50,8 +50,8 @@
     <div class="item-container-header">Temperature Scale</div>
     <div class="item-container-content">
         <div class="item tab-buttons" id='scale_select'>
-            <a name="tab-1" class="tab-button" value='f'>Fahrenheit</a>
-            <a name="tab-1" class="tab-button active" value='c'>Celcius</a>
+            <a name="tab-1" class="tab-button active" value=1>Celcius</a>
+            <a name="tab-1" class="tab-button" value=2>Fahrenheit</a>
         </div>
     </div>
 </div>
@@ -81,6 +81,7 @@
     localStorage['background_color'] = options['background_color'];
     localStorage['foreground_color'] = options['foreground_color'];
     localStorage['wheater_scale'] = options['wheater_scale'];
+    
     console.log('Got options: ' + JSON.stringify(options));
     return options;
   }
