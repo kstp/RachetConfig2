@@ -18,7 +18,7 @@
   </head>
 
   <body>
-    <h1 class='title'>Rachet WatchFace Configuration v1.2</h1>
+    <h1 class='title'>Rachet WatchFace Configuration v1.3</h1>
 
     <div class='item-container'>
       <div class='item-container-content'>
@@ -129,8 +129,10 @@
       foregroundColorPicker.value = localStorage['foreground_color'];
         if(localStorage['wheater_scale'] == 0){
             document.getElementById("tab-1-c").className += " active";
+            document.getElementById("tab-1-f").className -= " active";
         }else{
             document.getElementById("tab-1-f").className += " active";
+            document.getElementById("tab-1-c").className += " active";
         }
    
    }
