@@ -50,8 +50,8 @@
     <div class="item-container-header">Temperature Scale</div>
     <div class="item-container-content">
         <div class="item tab-buttons" id='scale_select'>
-            <a name="tab-1" class="tab-button active" value='C'>Celcius</a>
-            <a name="tab-1" class="tab-button" value='F'>Fahrenheit</a>
+            <a name="tab-1" class="tab-button active" value='c'>Celcius</a>
+            <a name="tab-1" class="tab-button" value='f'>Fahrenheit</a>
         </div>
     </div>
 </div>
@@ -65,26 +65,15 @@
   </body>
   
   <script>
-      function getTemperatureFormatIndex() {
-          var tabs = document.getElementsByName("tab-1");
-          for(var t = 0; t < tabs.length; t++) {
-              var tbclasses = tabs[t].className.split(" ");
-              for(var i = 0; i < tbclasses.length; i++) {
-                  if(tbclasses[i] === "active") {
-                      return t;
-                  }
-              }
-          }
-      }
   function getConfigData() {
     var backgroundColorPicker = document.getElementById('background_color_picker');
     var foregroundColorPicker = document.getElementById('foreground_color_picker');
-    var scaleSelect = getTemperatureFormatIndex();
+    var scaleSelect = document.getElementById('scale_select');
    
     var options = {
       'background_color': backgroundColorPicker.value,
       'foreground_color': foregroundColorPicker.value,
-      'wheater_scale': scaleSelect
+      'wheater_scale': scaleSelect.value
 
     };
 
@@ -121,13 +110,13 @@
   (function() {
     var backgroundColorPicker = document.getElementById('background_color_picker');
     var foregroundColorPicker = document.getElementById('foreground_color_picker');
-    //var scaleSelect = document.getElementById('scale_select');
+    var scaleSelect = document.getElementById('scale_select');
 
     // Load any previously saved configuration, if available
-    if(localStorage['background_color']) {
+    if(localStorage['wheater_scale']) {
       backgroundColorPicker.value = localStorage['background_color'];
       foregroundColorPicker.value = localStorage['foreground_color'];
-      //scaleSelect.value = localStorage['wheater_scale'];
+      scaleSelect.value = localStorage['wheater_scale'];
    }
   })();
   </script>
