@@ -60,6 +60,7 @@
     <div class='item-container'>
       <div class='button-container'>
         <input id='submit_button' type='button' class='item-button' value='SAVE'>
+        <input id='reset_button' type='button' class='item-button' value='RESET'>
       </div>
     </div>
   </body>
@@ -116,6 +117,34 @@
     // Set the return URL depending on the runtime environment
     var return_to = getQueryParam('return_to', 'pebblejs://close#');
     document.location = return_to + encodeURIComponent(JSON.stringify(getConfigData()));
+  });
+  
+  var resetButton = document.getElementById('reset_button');
+  submitButton.addEventListener('click', function() {
+        console.log('reset');
+                                var backgroundColorPicker = document.getElementById('background_color_picker');
+                                var foregroundColorPicker = document.getElementById('foreground_color_picker');
+                                var scaleSelect = getTemperatureFormatIndex();
+                                
+                                backgroundColorPicker.value = '#55FF55';
+                                foregroundColorPicker.value = '#000000';
+                                scaleSelect = 0;
+                                
+                                var options = {
+                                'background_color': backgroundColorPicker.value,
+                                'foreground_color': foregroundColorPicker.value,
+                                'wheater_scale': scaleSelect
+                                
+                                };
+                                
+                                document.getElementById("tab-1-c").className += " active";
+                                document.getElementById("tab-1-f").className = "tab-button";
+                                
+                                // Save for next launch
+                                localStorage['background_color'] = options['background_color'];
+                                localStorage['foreground_color'] = options['foreground_color'];
+                                localStorage['wheater_scale'] = options['wheater_scale'];
+                                
   });
 
   (function() {
